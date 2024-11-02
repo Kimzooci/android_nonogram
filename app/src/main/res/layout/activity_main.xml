@@ -1,0 +1,25 @@
+<!-- activity_main.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- TableLayout for the Nonograms board -->
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:stretchColumns="*">
+    </TableLayout>
+
+    <!-- TextView to display lives (Remaining attempts) -->
+    <TextView
+        android:id="@+id/lifeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Life: 3"
+        android:textSize="18sp"/>
+</LinearLayout>
