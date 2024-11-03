@@ -1,3 +1,7 @@
+<!-- res/values/strings.xml -->
 <resources>
     <string name="app_name">Nonograms</string>
+    <string name="life_text">Life: %1$d</string>
+    <string name="game_over">Game Over - Tap to Restart</string>
+    <string name="you_win">You Win!</string>
 </resources>

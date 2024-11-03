@@ -1,25 +1,52 @@
-<!-- activity_main.xml -->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
 
-    <!-- TableLayout for the Nonograms board -->
-    <TableLayout
-        android:id="@+id/tableLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:stretchColumns="*">
-    </TableLayout>
-
-    <!-- TextView to display lives (Remaining attempts) -->
+    <!-- 생명력 표시 텍스트 -->
     <TextView
         android:id="@+id/lifeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:text="Life: 3"
-        android:textSize="18sp"/>
+        android:textSize="18sp"
+        android:layout_marginTop="16dp" />
+
+    <!-- 모드 선택 ToggleButton -->
+    <ToggleButton
+        android:id="@+id/modeToggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textOn="검정 사각형 모드"
+        android:textOff="X 표시 모드"
+        android:checked="false" />
+
+    <!-- ScrollView를 추가하여 스크롤 가능하게 설정 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:importantForAccessibility="no">
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*"
+            android:importantForAccessibility="no" />
+    </ScrollView>
+
+
+    <!-- 재시작 버튼 추가 -->
+    <Button
+        android:id="@+id/restartButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Restart"
+        android:visibility="gone"
+        android:layout_marginTop="16dp" />
 </LinearLayout>
