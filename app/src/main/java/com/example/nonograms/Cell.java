@@ -52,4 +52,6 @@ public class Cell extends AppCompatButton {
     public static int getNumBlackSquares() {
         return numBlackSquares;
     }
+
+
 }

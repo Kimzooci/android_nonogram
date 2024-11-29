@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -5,7 +6,7 @@
     android:orientation="vertical"
     android:gravity="center_horizontal">
 
-    <!-- 생명력 표시 텍스트 -->
+    <!-- 생명 텍스트 -->
     <TextView
         android:id="@+id/lifeTextView"
         android:layout_width="wrap_content"
@@ -14,51 +15,41 @@
         android:textSize="18sp"
         android:layout_marginTop="16dp" />
 
-    <!-- 모드 선택 ToggleButton -->
+    <!-- 모드 선택 토글 버튼 -->
     <ToggleButton
         android:id="@+id/modeToggle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:textOn="검정 사각형 모드"
-        android:textOff="X 표시 모드"
-        android:checked="false" />
+        android:textOff="X 표시 모드" />
 
-    <!-- 열 힌트를 위한 상단 TableRow -->
+    <!-- 스크롤 가능한 보드 영역 -->
     <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fillViewport="true">
-
-        <TableRow
-            android:id="@+id/topHintRow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center">
-            <!-- 열 힌트가 동적으로 추가됩니다. -->
-        </TableRow>
-    </HorizontalScrollView>
-
-    <!-- ScrollView를 추가하여 스크롤 가능하게 설정 -->
-    <ScrollView
-        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:fillViewport="true">
+        android:layout_weight="1">
 
-        <TableLayout
-            android:id="@+id/tableLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:stretchColumns="*" />
-    </ScrollView>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableLayout
+                android:id="@+id/tableLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="*">
+            </TableLayout>
+        </ScrollView>
+    </HorizontalScrollView>
 
     <!-- 재시작 버튼 -->
     <Button
         android:id="@+id/restartButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Game Over - Tap to Restart"
+        android:text="Restart"
         android:visibility="gone"
         android:layout_marginTop="16dp" />
+
 </LinearLayout>
