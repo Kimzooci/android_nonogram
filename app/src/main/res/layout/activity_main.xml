@@ -24,29 +24,41 @@
         android:textOff="X 표시 모드"
         android:checked="false" />
 
+    <!-- 열 힌트를 위한 상단 TableRow -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <TableRow
+            android:id="@+id/topHintRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+            <!-- 열 힌트가 동적으로 추가됩니다. -->
+        </TableRow>
+    </HorizontalScrollView>
+
     <!-- ScrollView를 추가하여 스크롤 가능하게 설정 -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:fillViewport="true"
-        android:importantForAccessibility="no">
+        android:fillViewport="true">
 
         <TableLayout
             android:id="@+id/tableLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:stretchColumns="*"
-            android:importantForAccessibility="no" />
+            android:stretchColumns="*" />
     </ScrollView>
 
-
-    <!-- 재시작 버튼 추가 -->
+    <!-- 재시작 버튼 -->
     <Button
         android:id="@+id/restartButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Restart"
+        android:text="Game Over - Tap to Restart"
         android:visibility="gone"
         android:layout_marginTop="16dp" />
 </LinearLayout>

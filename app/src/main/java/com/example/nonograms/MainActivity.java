@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             String hintText = formatHint(columnHints);
             TextView hintTextView = new TextView(this);
             hintTextView.setText(hintText);
-            hintTextView.setPadding(8, 8, 8, 8);
+            hintTextView.setPadding(4, 4, 4, 4); // 패딩을 조정하여 잘림 방지
             hintTextView.setGravity(android.view.Gravity.CENTER);
             topHintRow.addView(hintTextView);
         }
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
             String hintText = formatHint(rowHints);
             TextView sideHintTextView = new TextView(this);
             sideHintTextView.setText(hintText);
-            sideHintTextView.setPadding(8, 8, 8, 8);
+            sideHintTextView.setPadding(4, 4, 4, 4); // 패딩을 조정하여 잘림 방지
             sideHintTextView.setGravity(android.view.Gravity.CENTER);
             tableRow.addView(sideHintTextView);
 
@@ -101,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
         life = 3;
         updateLifeText();
     }
-
 
     private void handleCellClick(Cell cell) {
         if (modeToggle.isChecked()) {
@@ -149,10 +148,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void restartGame() {
-        lifeTextView.setText(getString(R.string.life_text, life));
-        Cell.resetNumBlackSquares();
+        life = 3;
         initializeBoard();
         restartButton.setVisibility(View.GONE);
+        lifeTextView.setText(getString(R.string.life_text, life));
     }
 
     // 행의 힌트 생성
